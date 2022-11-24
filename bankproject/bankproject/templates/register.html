@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<body style="background-color:plum;">
+<h2>REGISTER FORM</h2>
+
+<form action="register"method="Post">
+    {% csrf_token %}
+        <input type="text" name="username"placeholder="UserName"><br>
+        <input type="text" name="firstname"placeholder="Enter your Firstname"><br>
+        <input type="text" name="lastname"placeholder="Enter your lastname"><br>
+
+        <label>Select date of Birth:</label><br>
+        <input type="date" number="age"placeholder="Enter age"><br>
+
+        <label>Gender:</label><br>
+           <input type="radio"value="Male"name="gender"/>Male<br>
+            <input type="radio"value="female"name="gender"/>Female<br>
+			<input type="radio"value="other"name="gender"/>Other<br>
+
+        <input type="email" name="email"placeholder="Email id"><br>
+
+        <input type="phone number"number="Phone No:"size="20"placeholder="Mobile No:"/><br><br>
+
+        <input type="text" name="address"placeholder="Enter Address"><br>
+
+        <label>Select District:</label><br>
+        <select name = "dropdown">
+            <option value = "Alappuzha" selected>Alappuzha</option>
+            <option value = "Trivandrum">Trivandrum</option>
+            <option value = "Kottayam">Kottayam</option>
+            <option value = "Kollam">kollam</option>
+            <option value = "Ernakulam">Ernakulam</option>
+        </select><br>
+
+        <label>Account type:</label><br>
+        <select name = "dropdown">
+            <option value = "Saving" selected>Saving</option>
+            <option value = "Current">Current</option>
+        </select><br>
+
+        <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Payment Method</option>
+        <option value="1">Credit card</option>
+        <option value="2">Debit card</option>
+        <option value="3">Cheque Book</option>
+        </select><br>
+
+        <input type="password" name="password"placeholder="Enter your password"><br>
+        <input type="password" name="password1"placeholder="Confirm password"><br>
+
+        <input type="submit">
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
